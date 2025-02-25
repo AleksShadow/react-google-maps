@@ -1,0 +1,51 @@
+.input-wrapper {
+    background-color: #fff2;
+    width: 50%;
+    border-radius: 10px;
+    height: 2.5rem;
+    padding: 0 0 0 15px;
+    /* box-shadow: 2px 2px 5px #888; */
+    display: flex;
+    align-items: center;
+    border: solid 1px;
+    margin-bottom: 3rem;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    font-size: 1.25rem;
+    width: 100%;
+    margin-left: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#search-icon {
+    color: royalblue;
+}
+
+#clear-icon {
+    color: #000;
+    font-size: 20px;
+}
+
+.clear-btn {
+    border-radius: 0 10px 10px 0;
+    background-color: #ddd;
+    color: inherit;
+    border: none;
+    padding: 6px 20px;
+    z-index: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  .clear-btn:hover {
+    background-color: royalblue;
+    color: white;
+  }
