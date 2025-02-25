@@ -12,3 +12,5 @@ This app:
 - Uses markers, custom markers according to loaded data.
 - Searchers for places/names/phones/...etc
 - Dynamicly changes the list of addresses when a user moves the map, or changes the map scale
+
+To see how it works go here: https://aleksshadow.github.io/react-maps-deployed
