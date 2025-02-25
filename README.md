@@ -13,4 +13,4 @@ This app:
 - Searchers for places/names/phones/...etc
 - Dynamicly changes the list of addresses when a user moves the map, or changes the map scale
 
-To see how it works go here: https://aleksshadow.github.io/react-maps-deployed
+To see how it works go here: <a href="https://aleksshadow.github.io/react-maps-deployed" target="_blank">https://aleksshadow.github.io/react-maps-deployed</a>
