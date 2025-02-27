@@ -19,10 +19,8 @@ const CustomMap = ( {onResults, selectedResult} ) => {
   const [markerLocationResult, setMarkerLocationResult] = useState([]);
 
   // test data
-  //const url = "https://jsonplaceholder.typicode.com/users";
+  const url = "https://jsonplaceholder.typicode.com/users";
   
-  const url = "https://scpp.in1touch.org/client/roster/clientRosterJsonView.json?clientRosterJsonId=1&page=1";
-
   const selectAddress = (id) => {
     const newList = markerLocation.map((item) => {
       if (item.id === id) {
