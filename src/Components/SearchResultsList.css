@@ -1,13 +1,27 @@
 .results-list {
-    width: 50%;
     background-color: white;
     display: flex;
     flex-direction: column;
     /* border-radius: 10px; */
     box-shadow: 0px 0px 8px #ddd;
     margin-top: 3rem;
-    max-height: 300px;
     overflow-y: auto;
     z-index: 10;
     position: absolute;
 }
+
+  /* for desktops, tablets  */
+  @media screen and (min-width: 528px) {
+    .results-list {
+        width: 60%;
+        max-height: 300px;
+    }
+  }
+  
+  /* for smarthones */
+  @media screen and (max-width: 527px) {
+    .results-list {
+        width: 80%;
+        max-height: 250px;
+    }
+  }

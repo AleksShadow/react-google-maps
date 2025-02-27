@@ -17,20 +17,31 @@
   color: #61dafb;
 }
 
-
-/* @media screen and (min-width: 50rem) {
+/* for desktops, tablets  */
+@media screen and (min-width: 528px) {
   .map-container {
     height: 600px;
     width: 50%;
-    margin-left: 50px;
+    margin-left: 3%;
+  }
+  #right {
+    height: 600px;
+    width: 47%;
+    max-height: 600px;
   }
 }
 
-@media screen and (max-width: 80rem) {
+/* for smarthones */
+@media screen and (max-width: 527px) {
   .map-container {
+    height: 300px;
+    width: 97%;
+  }
+  
+  #right {
     height: 400px;
     width: 100%;
-    margin-left: 10px;
+    max-height: 500px;
   }
 }
 
@@ -40,10 +51,10 @@
   justify-content: flex-start;
    border: 1px solid #999;
   padding: 0px 0px;
- } */
+ }
 
 
-.map-container {
+/* .map-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -52,17 +63,14 @@
   border: 1px solid #999;
   padding: 0px 0px;
   margin-left: 50px;
-}
+} */
 
 #right {
   display: flex;
   flex-direction: column;
   top: 0px;
   bottom: 0;
-  width: 40%;
   background-color: #fff;
-  height: 600px;
-  max-height: 600px;
   overflow-y: scroll;
   border: 1px solid #999;
 }

@@ -1,5 +1,6 @@
 // import "./App.css";
 import React, { useEffect, useState } from "react";
+import "./Loader.css";
 import {
   Map,
   useMap,
@@ -17,7 +18,10 @@ const CustomMap = ( {onResults, selectedResult} ) => {
   const [markerLocation, setMarkerLocation] = useState([]);
   const [markerLocationResult, setMarkerLocationResult] = useState([]);
 
-  const url = "https://jsonplaceholder.typicode.com/users";
+  // test data
+  //const url = "https://jsonplaceholder.typicode.com/users";
+  
+  const url = "https://scpp.in1touch.org/client/roster/clientRosterJsonView.json?clientRosterJsonId=1&page=1";
 
   const selectAddress = (id) => {
     const newList = markerLocation.map((item) => {
@@ -74,13 +78,13 @@ const CustomMap = ( {onResults, selectedResult} ) => {
     setMarkerLocationResult(newList);
   }
 
-
   useEffect(() => {
     fetch(url)
     .then(response => response.json())
     .then(locationArray => {
-        console.log("Loading addresses array...")
-        let newMarkerLocations = locationArray.map((location) => {
+        console.log("Loading addresses array...");
+
+        let newMarkerLocations = locationArray.dataArray.map((location) => {
               return {
                 ...location,
               isActive: false,}
@@ -92,7 +96,6 @@ const CustomMap = ( {onResults, selectedResult} ) => {
         });
         setMarkerLocation(newMarkerLocations);
         setMarkerLocationResult(newMarkerLocations);
-
       })
     }, []);
 
@@ -103,7 +106,7 @@ const CustomMap = ( {onResults, selectedResult} ) => {
       }
     }, [markerLocation])
 
-  const hasMarkers = markerLocation.length > 0;
+  let hasMarkers = markerLocation.length > 0;
 
   let markerLocationCenter = hasMarkers ? markerLocation[0].address.geo : {lat: 0, lng: 0}
 
@@ -119,18 +122,18 @@ const CustomMap = ( {onResults, selectedResult} ) => {
 }
 
 useEffect(() => {
-  if (selectedResult) {
+  if (selectedResult !==0) {
     selectAddress(selectedResult.id);
   }
 }, [selectedResult]);
 
-
+if (hasMarkers) {
   return (
     <div className="row ml-5 mr-3">
       <div className="map-container">
         <Map
           style={{ borderRadius: "10px" }}
-          defaultZoom={5}
+          defaultZoom={7}
           defaultCenter={markerLocationCenter}
           gestureHandling={"greedy"}
           // disableDefaultUI={ true }
@@ -197,6 +200,15 @@ useEffect(() => {
 
       </div>
     </div>
-  );
+  )} else {
+    return (
+      // <div style={{textAlign: "center", fontSize: "18px"}}>Loading...
+      <div className="loader">
+        <div className="dot" />
+        <div className="dot" />
+        <div className="dot" />
+      </div>
+    )
+  };
 }
 export default CustomMap;

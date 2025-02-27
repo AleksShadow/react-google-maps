@@ -1,6 +1,5 @@
 .input-wrapper {
     background-color: #fff2;
-    width: 50%;
     border-radius: 10px;
     height: 2.5rem;
     padding: 0 0 0 15px;
@@ -15,7 +14,7 @@ input {
     background-color: transparent;
     border: none;
     height: 100%;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     width: 100%;
     margin-left: 5px;
 }
@@ -48,4 +47,18 @@ input:focus {
   .clear-btn:hover {
     background-color: royalblue;
     color: white;
+  }
+
+  /* for desktops, tablets  */
+@media screen and (min-width: 528px) {
+    .input-wrapper {
+        width: 60%;
+    }
+  }
+  
+  /* for smarthones */
+  @media screen and (max-width: 527px) {
+    .input-wrapper {
+        width: 80%;
+    }
   }

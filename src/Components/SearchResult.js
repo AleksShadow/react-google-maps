@@ -10,10 +10,10 @@ export const SearchResult = ( {result, setSelectedSearchResult} ) => {
         >
             <b>{result.name}</b><br />
             <i>email:</i> {result.email}<br />
-            <i>phone:</i> {result.phone},<br />
-            <i>website:</i> {result.website},<br />
-            <i>address:</i> {result.address.suite}, {result.address.street},&ensp;
-            {result.address.city}, {result.address.zipcode}
+            <i>phone:</i> {result.phone}<br />
+            <i>website:</i> {result.website}<br />
+            <i>address:</i> {result.address.suite} {result.address.street}{result.address.city && ','}&ensp;
+            {result.address.city} {result.address.zipcode}
             </div>
     )
 }
