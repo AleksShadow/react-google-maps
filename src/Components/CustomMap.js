@@ -82,7 +82,7 @@ const CustomMap = ( {onResults, selectedResult} ) => {
     .then(locationArray => {
         console.log("Loading addresses array...");
 
-        let newMarkerLocations = locationArray.dataArray.map((location) => {
+        let newMarkerLocations = locationArray.map((location) => {
               return {
                 ...location,
               isActive: false,}
